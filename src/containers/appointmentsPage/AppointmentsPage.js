@@ -18,6 +18,7 @@ export const AppointmentsPage = (props) => {
     <div>
       <section>
         <h2 onClick={props.addAppointment}>Add Appointment +</h2>
+        <form onSubmit={handleSubmit} ></form>
       </section>
       <hr />
       <section>

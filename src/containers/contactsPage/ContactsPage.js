@@ -45,7 +45,7 @@ export const ContactsPage = (props) => {
     } else {
       setDisplayStyle(false);
     }
-  });
+  }, [props.contactData, contactName]);
 
 
   /*
