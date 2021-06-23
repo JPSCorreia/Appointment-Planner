@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import { ContactForm } from '../../components/contactForm/ContactForm'
+import { TileList } from '../../components/tileList/TileList'
 export const ContactsPage = (props) => {
 
   /*
@@ -77,33 +78,23 @@ export const ContactsPage = (props) => {
     <div>
       <section>
         <h2>Add Contact</h2> 
-        
-      <form onSubmit={handleSubmit} >
-        <input
-          type="text"
-          placeholder="New Contact Name"
-          onChange={handleNameChange}
-          value={contactName}
-        />
-        <input
-          type="text"
-          placeholder="New Contact Phone"
-          onChange={handlePhoneChange}
-          value={contactPhone}
-        />
-        <input
-          type="text"
-          placeholder="New Contact Email"
-          onChange={handleEmailChange}
-          value={contactEmail}
-        />
-        <input type="submit" value="Add Contact" />
-        <h6 style={displayStyle ? displayErrorShow : displayErrorHide }>Error: Duplicate Name</h6>
-      </form>
+      <ContactForm 
+        handleSubmit={handleSubmit}
+        handleNameChange={handleNameChange}
+        contactName={contactName}
+        handlePhoneChange={handlePhoneChange}
+        contactPhone={contactPhone}
+        handleEmailChange={handleEmailChange}
+        contactEmail={contactEmail}
+      />
+      <h6 style={displayStyle ? displayErrorShow : displayErrorHide }>Error: Duplicate Name</h6>
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList 
+          contactData={props.contactData}
+        />
         <ul className="ContactList">
           {props.contactData.map((contact) => (
             <p><b>Name:</b> {contact.name}, <b>Phone Number:</b> {contact.phone}, <b>Email Adress:</b> {contact.email}</p>
