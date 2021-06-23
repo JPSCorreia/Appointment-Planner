@@ -76,7 +76,7 @@ export const ContactsPage = (props) => {
   return (
     <div>
       <section>
-        <h2 onClick={props.addContact}>Add Contact</h2> 
+        <h2>Add Contact</h2> 
         
       <form onSubmit={handleSubmit} >
         <input

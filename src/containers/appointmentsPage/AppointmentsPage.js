@@ -17,7 +17,7 @@ export const AppointmentsPage = (props) => {
   return (
     <div>
       <section>
-        <h2 onClick={props.addAppointment}>Add Appointment +</h2>
+        <h2>Add Appointment +</h2>
         <form onSubmit={handleSubmit} ></form>
       </section>
       <hr />
