@@ -91,16 +91,10 @@ export const ContactsPage = (props) => {
       </section>
       <hr />
       <section>
-        <h2>Contacts</h2>
+        <h2>Contacts:</h2>
         <TileList 
-          contactData={props.contactData}
+          objectData={props.contactData}
         />
-        <ul className="ContactList">
-          {props.contactData.map((contact) => (
-            <p><b>Name:</b> {contact.name}, <b>Phone Number:</b> {contact.phone}, <b>Email Adress:</b> {contact.email}</p>
-          ))
-          }
-        </ul>
       </section>
     </div>
   );
