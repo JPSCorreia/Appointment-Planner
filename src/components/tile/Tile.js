@@ -4,13 +4,23 @@ export const Tile = (props) => {
   return (
     <div className="tile-container">
     
-    {Object.values(props.objectData).map((objectData, i) => 
-      <p 
-        className='tile-title' 
-      >
-        Contact #{i+1}: {Object.keys(objectData)} {Object.values(objectData)}
-      </p>
+    {props.objectData.map((objectData, i) => 
+      <div> 
+        <br></br>
+        <b>Contact #{i+1}:</b>
+        {Object.values(objectData).map((objectData2, i) =>
+          <p 
+            className='tile-title' 
+          >
+            {Object.keys(objectData)[i]}: {objectData2}
+          </p>
+        )}
+      <br></br>
+    
+      </div>
     )}
+    
+    
      
 
 
