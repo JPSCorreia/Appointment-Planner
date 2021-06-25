@@ -14,21 +14,3 @@ export const TileList = (props) => {
     </div>
   );
 };
-
-
-/*
-
-export const TileList = (props) => {
-  return (
-    <div>
-      <ul>
-        {props.objectData.map((objectData) => (
-          <Tile 
-            objectData={objectData}
-          />
-        ))}
-      </ul>
-    </div>
-  );
-};
-*/

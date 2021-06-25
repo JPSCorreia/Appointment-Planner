@@ -6,34 +6,9 @@ import { useState } from 'react';
 
 function App() {
 
-  const [contactData, setContactData] = useState([
-    {
-      name: 'nome test 1',
-      phone: '959600234',
-      email: 'teste@gmail.com'
-    },
-    {
-      name: 'nome test 2',
-      phone: '967234689',
-      email: 'teste2@mail.com'
-    }
-  ]);
+  const [contactData, setContactData] = useState([]);
+  const [appointmentData, setAppointmentData] = useState([]);
 
-  
-  const [appointmentData, setAppointmentData] = useState([
-    {
-      title: 'appointment teste 1',
-      contact: '913045961',
-      date: '05/02/2021',
-      time: '15:00'
-    },
-    {
-      title: 'appointment teste 2',
-      contact: '967234689',
-      date: '10/10/2020',
-      time: '18:00'
-    }
-  ]);
 
 
   const ROUTES = {
@@ -94,7 +69,7 @@ function App() {
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage addAppointment={addAppointment} appointmentData={appointmentData} />
+            <AppointmentsPage addAppointment={addAppointment} appointmentData={appointmentData} contactData={contactData} />
           </Route>
         </Switch>
       </main>
@@ -103,3 +78,37 @@ function App() {
 }
 
 export default App;
+
+
+
+
+/* Test Data
+  const [contactData, setContactData] = useState([
+    {
+      name: 'nome test 1',
+      phone: '959600234',
+      email: 'teste@gmail.com'
+    },
+    {
+      name: 'nome test 2',
+      phone: '967234689',
+      email: 'teste2@mail.com'
+    }
+  ]);
+
+  
+  const [appointmentData, setAppointmentData] = useState([
+    {
+      title: 'appointment teste 1',
+      contact: 'Maria',
+      date: '05/02/2021',
+      time: '15:00'
+    },
+    {
+      title: 'appointment teste 2',
+      contact: 'José',
+      date: '10/10/2020',
+      time: '18:00'
+    }
+  ]);
+*/

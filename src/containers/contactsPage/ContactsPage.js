@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ContactForm } from '../../components/contactForm/ContactForm'
 import { TileList } from '../../components/tileList/TileList'
+
 export const ContactsPage = (props) => {
 
-  /*
-  Define state variables for 
-  contact info and duplicate check
-  */
 
   const [contactName, setContactName] = useState('');
   const [contactPhone, setContactPhone] = useState('');
@@ -24,9 +21,8 @@ export const ContactsPage = (props) => {
     // Check if theres already this name in the contact list and add it if it doesnt:
     if (props.contactData.some( dataName => dataName['name'] === contactName )) {
 
-      
 
-    } else {
+    } else if (contactName !== '' && contactPhone !== '' && contactEmail !== '')  {
 
       props.addContact(contactName, contactPhone, contactEmail)
 
@@ -49,13 +45,6 @@ export const ContactsPage = (props) => {
   }, [props.contactData, contactName]);
 
 
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
-  
-
-
 
   const handleNameChange = (event) => {
       setContactName(event.target.value)
@@ -69,9 +58,6 @@ export const ContactsPage = (props) => {
   const handleEmailChange = (event) => {
     setContactEmail(event.target.value)
   }
-
-
-
 
 
   return (
