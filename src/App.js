@@ -63,18 +63,16 @@ function App() {
           <Route exact path="/">
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
-          <Route exact path="/contacts">
-            <Redirect to={ROUTES.CONTACTS} />
+          <Route path ="/contacts">
+            <ContactsPage addContact={addContact} contactData={contactData} />
           </Route>
-          <Route exact path="/appointments">
-            <Redirect to={ROUTES.APPOINTMENTS} />
+          <Route path ="/appointments">
+            <AppointmentsPage addAppointment={addAppointment} appointmentData={appointmentData} contactData={contactData} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-             {/* Add props to ContactsPage */}
             <ContactsPage addContact={addContact} contactData={contactData} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
             <AppointmentsPage addAppointment={addAppointment} appointmentData={appointmentData} contactData={contactData} />
           </Route>
         </Switch>
