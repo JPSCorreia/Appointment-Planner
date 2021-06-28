@@ -62,10 +62,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Redirect to={ROUTES.CONTACTS} />
+          </Route>
           <Route exact path="/contacts">
             <Redirect to={ROUTES.CONTACTS} />
+          </Route>
           <Route exact path="/appointments">
-            <Redirect to={ROUTES.CONTACTS} />
+            <Redirect to={ROUTES.APPOINTMENTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
